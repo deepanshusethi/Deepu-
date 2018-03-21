@@ -1,6 +1,5 @@
 <?php
 /* Displays all error messages */
-session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,11 +12,7 @@ session_start();
     <h1>Error</h1>
     <p>
     <?php 
-    if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ): 
-        echo $_SESSION['message'];    
-    else:
-        header( "location: index.php" );
-    endif;
+        //print all error messages
     ?>
     </p>     
     <a href="index.php"><button class="button button-block"/>Home</button></a>

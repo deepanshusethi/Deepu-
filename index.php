@@ -1,80 +1,18 @@
 <?php 
 /* Main page with two forms: sign up and log in */
-require 'db.php';
-session_start();
 ?>
 <!DOCTYPE html>
-
 <html>
-  <head>
-  <head>
-  
+<head>
+  <title>Sign-Up/Login Form</title>
   <?php include 'css/css.html'; ?>
 </head>
-  
-    <meta charset="utf-8">
-    <title>Mood 4 Music</title>
-    <style>
-	
-    </style>
-	<link href="home1.css" type="text/css" rel="stylesheet">
-	
-  </head>
-  
-  
-  <?php 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') 
-{
-    if (isset($_POST['login'])) { //user logging in
 
-        require 'login.php';
-        
-    }
-    
-    elseif (isset($_POST['register'])) { //user registering
-        
-        require 'register.php';
-        
-    }
-}
+<?php 
+
 ?>
-  <header1>
-  <div id ="header">
-<h2 id="logo ">
-            <a href="index.php"><img src = "header.png" style=" width: 100%;height:150px; float:left;" alt = logo/>
-		   
-
-
-
-
-<br style="clear:both;"/>
-
-</div></a></h2>
-</header1>
-
-  <div class="bb">
-    <header>
-	<div style ="font-size:40px;">
-     <h1>How are you feeling..?</h1>
-	 </div>
-     </header>
-     <form id="fom_id" action="Play.php"  autocomplete="off">
-       <input id="ip_id" list="moods" name="qip" placeholder="ummm...." oninput="facpt()">
-         <datalist id="moods">
-           <option value="Happy" >
-           <option value="Sad">
-           <option value="Crazy">
-           <option value="Loved">
-           <option value="Lost">
-         </datalist>
-     </form>
-    <br><br> <br><footer>Not so sure?.... Take a <a href="quiz.php">little quiz</a></footer></br>
-   </div>
-   
-   <p id="x"></p>
-   <div class="aa">
-     
-      <div class="form">
+<body>
+  <div class="form">
       
       <ul class="tab-group">
         <li class="tab"><a href="#signup">Sign Up</a></li>
@@ -154,25 +92,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
       </div><!-- tab-content -->
       
 </div> <!-- /form -->
-<script>
-  function facpt()
-  {
-    var ip=document.getElementById('ip_id').value,arr=["Happy","Sad","Crazy","Loved","Lost"],i=0,len=arr.length;
-    while(i<len)
-   { if (ip==arr[i])
-     {
-	 var x='["'+arr[i]+'"]';
-	 //document.getElementById('x').innerHTML=ip;
-	 document.getElementById('ip_id').value=x;
-     document.getElementById('fom_id').submit();
-      break;
-     }
-     i++;
-   }
-  }
-</script>
-  <script src='js1.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
     <script src="js/index.js"></script>
 
+</body>
 </html>
